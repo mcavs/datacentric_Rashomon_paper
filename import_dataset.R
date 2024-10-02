@@ -1,4 +1,4 @@
-setwd("/Volumes/LaCie/Data-centric Rashomon/datasets")
+setwd("datacentric_Rashomon/datasets")
 csv_files <- list.files(pattern = "\\.csv$")
 
 datasets <- NULL
