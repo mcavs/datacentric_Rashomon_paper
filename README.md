@@ -1,4 +1,4 @@
-# datacentric_Rashomon
+# data-centric Rashomon
 The effect of data-centric methods on Rashomon effect 
 
 ## Contents
