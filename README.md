@@ -9,6 +9,8 @@ The effect of data-centric methods on Rashomon effect
 
 :floppy_disk: `comp_data_with_clusters.csv`: data complexity metrics with complexity clusters for the benchmark datasets
 
+:floppy_disk: `rash.csv`: the predictive multiplicity metrics of the Rashomon sets 
+
 :page_facing_up: `import_dataset.R`: a script to import the datasets
 
 :page_facing_up: `filtering.R`: the filtering methods for variable selection
