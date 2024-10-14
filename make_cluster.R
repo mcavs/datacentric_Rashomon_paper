@@ -28,3 +28,20 @@ fviz_cluster(kmeans_result,
 comp_data_with_clusters <- data.frame(data = comp_data$data, 
                                       cluster = kmeans_result$cluster,
                                       comp_data[,2:19])
+
+
+#
+# PCA
+
+x <- comp_data[, 2:12]
+mx <- as.data.frame(x)
+mx <- as.matrix(mx)
+rownames(mx) <- comp_data$data
+
+pca <- prcomp(mx, scale = TRUE)
+
+nx <- as.data.frame(pca$x)
+nx$cluster <- comp_data$cluster
+
+fviz_pca_biplot(pca) +
+  geom_point(data=nx, aes(PC1, PC2, color=cluster), size=3)
