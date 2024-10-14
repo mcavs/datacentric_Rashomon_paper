@@ -56,5 +56,23 @@ rash_long <- pivot_longer(rash, amb:f1)
 
 ggplot(rash_long, aes(method, value, color=filter)) +
   geom_boxplot(coef=999) + 
-  facet_wrap(~name, scale="free_x") + coord_flip() + ggtitle("Rashomon sets")
+  facet_wrap(~name, scale="free_x") + coord_flip() + 
+  theme_bw() + ggtitle("Rashomon sets")
+
+ggplot(rash_long, aes(data, value, color=filter)) +
+  geom_boxplot(coef=999) + 
+  facet_wrap(~name, scale="free_x") + coord_flip() + 
+  theme_bw() + ggtitle("Rashomon sets")
+
+rash$data <- reorder(rash$data, rash$dis, median, na.rm=TRUE)
+ggplot(rash, aes(data, dis, fill=filter)) +
+  geom_boxplot(coef=999, color="grey") + 
+  coord_flip() + 
+  theme_bw() + ggtitle("Rashomon sets")
+
+rash$method <- reorder(rash$method, rash$dis, median, na.rm=TRUE)
+ggplot(rash, aes(method, dis, fill=filter)) +
+  geom_boxplot(coef=999, color="grey") + 
+  coord_flip() + 
+  theme_bw() + ggtitle("Rashomon sets")
 
