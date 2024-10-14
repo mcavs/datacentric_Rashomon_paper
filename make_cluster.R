@@ -45,3 +45,16 @@ nx$cluster <- comp_data$cluster
 
 fviz_pca_biplot(pca) +
   geom_point(data=nx, aes(PC1, PC2, color=cluster), size=3)
+
+
+#
+# rash
+
+rash <- read_csv("rash.csv")
+
+rash_long <- pivot_longer(rash, amb:f1)
+
+ggplot(rash_long, aes(method, value, color=filter)) +
+  geom_boxplot(coef=999) + 
+  facet_wrap(~name, scale="free_x") + coord_flip() + ggtitle("Rashomon sets")
+
